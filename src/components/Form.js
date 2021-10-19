@@ -15,16 +15,19 @@ const Form = () => {
 
   //Extract functions from useContexts
   const { categorys } = useContext(CategoryContext);
-  const { searchRecipes } = useContext(RecipesContext);
+  const { searchRecipes, setConsult } = useContext(RecipesContext);
 
   //function to save the form data
   const getDataRecipe = (e) => {
     e.preventDefault();
     if (name.trim() === "" || category.trim() === "") {
       setError(true);
+      setConsult(false);
+
       return;
     }
     setError(false);
+    setConsult(true);
     searchRecipes(search);
   };
 
