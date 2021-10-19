@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
-//Create context
+
+//create the context
 export const CategoryContext = createContext();
 
 //Provider

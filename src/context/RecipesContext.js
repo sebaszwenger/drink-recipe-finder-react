@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
+//create the context
 export const RecipesContext = createContext();
 
 const RecipesProvider = (props) => {
