@@ -5,21 +5,24 @@ import { RecipesContext } from "../context/RecipesContext";
 import Error from "./Error";
 
 const Form = () => {
+  //useStates
   const [search, setSearch] = useState({
     name: "",
     category: "",
   });
-  const { name, category } = search;
-
   const [error, setError] = useState(false);
 
-  //Extract functions from useContexts
+  //Extract data from search
+  const { name, category } = search;
+
+  //Extract data from useContexts
   const { categorys } = useContext(CategoryContext);
   const { searchRecipes, setConsult } = useContext(RecipesContext);
 
   //function to save the form data
   const getDataRecipe = (e) => {
     e.preventDefault();
+    //validate empty inputs
     if (name.trim() === "" || category.trim() === "") {
       setError(true);
       setConsult(false);
